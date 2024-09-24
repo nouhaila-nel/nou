@@ -1,0 +1,14 @@
+---
+-name: configure nginx web sever
+hosts: droplet groupe2
+become: true 
+tasks: 
+- name: install nginx server
+  apt:
+  name: nginx state=present
+  state: latest
+- name: start ingnix server
+  service:
+    name: nginx
+    state : started
+
